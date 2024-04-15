@@ -1,0 +1,28 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://d0dyrkwv46hvp"]
+
+[ext_resource type="FontFile" uid="uid://c7le2s707buwa" path="res://assets/fonts/Tape Basic 14h.ttf" id="1_s8cts"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohls5"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xwgtf"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2um3j"]
+bg_color = Color(1, 1, 1, 1)
+
+[resource]
+default_font = ExtResource("1_s8cts")
+default_font_size = 16
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/styles/focus = SubResource("StyleBoxFlat_ohls5")
+Button/styles/hover = SubResource("StyleBoxFlat_xwgtf")
+Button/styles/normal = SubResource("StyleBoxFlat_2um3j")

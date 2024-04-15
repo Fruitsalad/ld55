@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://qcab4kke6h6y"]
+
+[ext_resource type="Texture2D" uid="uid://dpboqdtbpygnl" path="res://assets/png/sprites.png" id="1_dkjqj"]
+[ext_resource type="Script" path="res://source/game/things/Tree.cs" id="2_rwvra"]
+[ext_resource type="PackedScene" uid="uid://bx3kcd8gcgqka" path="res://scenes/things/log.tscn" id="3_tbupk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5nio"]
+atlas = ExtResource("1_dkjqj")
+region = Rect2(192, 0, 64, 64)
+
+[node name="Birch" type="Sprite2D"]
+texture = SubResource("AtlasTexture_u5nio")
+script = ExtResource("2_rwvra")
+packed_log = ExtResource("3_tbupk")

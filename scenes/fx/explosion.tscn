@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cob88akxl78sg"]
+
+[sub_resource type="Curve" id="Curve_mvpn6"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.2585, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_8lcoe"]
+width = 64
+curve = SubResource("Curve_mvpn6")
+
+[sub_resource type="Curve" id="Curve_7oigg"]
+bake_resolution = 10
+_data = [Vector2(0, 0), 0.0, 1.3695, 0, 0, Vector2(1, 1), 1.41156, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_6klq4"]
+width = 64
+curve = SubResource("Curve_7oigg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_oojgs"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 80.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 0, 0)
+damping_min = 90.0
+damping_max = 100.0
+scale_min = 3.0
+scale_max = 8.0
+scale_curve = SubResource("CurveTexture_8lcoe")
+scale_over_velocity_curve = SubResource("CurveTexture_6klq4")
+color = Color(0, 0, 0, 1)
+
+[node name="Explosion" type="GPUParticles2D"]
+amount = 32
+process_material = SubResource("ParticleProcessMaterial_oojgs")
+explosiveness = 1.0

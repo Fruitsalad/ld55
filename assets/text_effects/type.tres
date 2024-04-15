@@ -1,0 +1,6 @@
+[gd_resource type="RichTextEffect" load_steps=2 format=3 uid="uid://dke8ot6npr3j3"]
+
+[ext_resource type="Script" path="res://source/game/TypeEffect.cs" id="1_in2re"]
+
+[resource]
+script = ExtResource("1_in2re")

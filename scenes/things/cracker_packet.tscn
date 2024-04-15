@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://gq8qnn741o1k"]
+
+[ext_resource type="Texture2D" uid="uid://dpboqdtbpygnl" path="res://assets/png/sprites.png" id="1_rnv3u"]
+[ext_resource type="Script" path="res://source/game/things/CrackerPacket.cs" id="2_gqxbg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5nio"]
+atlas = ExtResource("1_rnv3u")
+region = Rect2(384, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tywci"]
+atlas = ExtResource("1_rnv3u")
+region = Rect2(384, 320, 64, 64)
+
+[node name="CrackerPacket" type="Sprite2D"]
+texture = SubResource("AtlasTexture_u5nio")
+script = ExtResource("2_gqxbg")
+tex_torn = SubResource("AtlasTexture_tywci")

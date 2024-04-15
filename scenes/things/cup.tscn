@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://npsm06tlqda3"]
+
+[ext_resource type="Texture2D" uid="uid://dpboqdtbpygnl" path="res://assets/png/sprites.png" id="1_o30bg"]
+[ext_resource type="Script" path="res://source/game/things/Cup.cs" id="2_ytdys"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5nio"]
+atlas = ExtResource("1_o30bg")
+region = Rect2(192, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32j7t"]
+atlas = ExtResource("1_o30bg")
+region = Rect2(256, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hclew"]
+atlas = ExtResource("1_o30bg")
+region = Rect2(320, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lobm"]
+atlas = ExtResource("1_o30bg")
+region = Rect2(192, 256, 64, 64)
+
+[node name="Cup" type="Sprite2D"]
+texture = SubResource("AtlasTexture_u5nio")
+script = ExtResource("2_ytdys")
+tex_empty = SubResource("AtlasTexture_u5nio")
+tex_soda = SubResource("AtlasTexture_32j7t")
+tex_blood = SubResource("AtlasTexture_hclew")
+tex_laying = SubResource("AtlasTexture_1lobm")

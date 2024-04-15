@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfvyru2kqantv"]
+
+[sub_resource type="Curve" id="Curve_wo0m3"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.785714, 0.810496), -0.95805, -0.95805, 0, 0, Vector2(1, 0.00510216), -9.28572, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_yckt1"]
+curve = SubResource("Curve_wo0m3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8m45u"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(15, 15, 15)
+direction = Vector3(0, -1, 0)
+spread = 19.286
+initial_velocity_min = 50.0
+initial_velocity_max = 60.0
+gravity = Vector3(0, 0, 0)
+damping_min = 6.494
+damping_max = 24.675
+scale_min = 2.0
+scale_max = 6.0
+scale_curve = SubResource("CurveTexture_yckt1")
+color = Color(0, 0, 0, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0awpy"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(10, 10, 10)
+direction = Vector3(0, -1, 0)
+spread = 14.61
+initial_velocity_min = 4.55
+initial_velocity_max = 21.04
+gravity = Vector3(0, 0, 0)
+damping_min = 6.494
+damping_max = 24.675
+scale_min = 2.0
+scale_max = 6.0
+scale_curve = SubResource("CurveTexture_yckt1")
+
+[node name="Fire" type="Node2D"]
+
+[node name="Smoke" type="GPUParticles2D" parent="."]
+z_index = 1
+amount = 128
+process_material = SubResource("ParticleProcessMaterial_8m45u")
+lifetime = 2.0
+explosiveness = 0.19
+visibility_rect = Rect2(-50, -130, 100, 180)
+
+[node name="Fire" type="GPUParticles2D" parent="."]
+z_index = 1
+amount = 64
+process_material = SubResource("ParticleProcessMaterial_0awpy")
+lifetime = 2.0
+visibility_rect = Rect2(-50, -100, 100, 150)

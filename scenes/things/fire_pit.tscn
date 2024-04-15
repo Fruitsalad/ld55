@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://lm6by8av2auy"]
+
+[ext_resource type="Texture2D" uid="uid://dpboqdtbpygnl" path="res://assets/png/sprites.png" id="1_yvuil"]
+[ext_resource type="PackedScene" uid="uid://cfvyru2kqantv" path="res://scenes/fx/fire.tscn" id="2_rs6w4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wquvk"]
+atlas = ExtResource("1_yvuil")
+region = Rect2(128, 64, 64, 64)
+
+[node name="FirePit" type="Sprite2D"]
+texture = SubResource("AtlasTexture_wquvk")
+
+[node name="Fire" parent="." instance=ExtResource("2_rs6w4")]
+visible = false

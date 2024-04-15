@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfsmlvslp3o1m"]
+
+[ext_resource type="Texture2D" uid="uid://dpboqdtbpygnl" path="res://assets/png/sprites.png" id="1_x3i4h"]
+[ext_resource type="Script" path="res://source/game/things/Candle.cs" id="2_ph5el"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cegja"]
+atlas = ExtResource("1_x3i4h")
+region = Rect2(512, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qb0m"]
+atlas = ExtResource("1_x3i4h")
+region = Rect2(576, 192, 64, 64)
+
+[node name="Candle" type="Sprite2D"]
+texture = SubResource("AtlasTexture_cegja")
+script = ExtResource("2_ph5el")
+tex_normal = SubResource("AtlasTexture_cegja")
+tex_lit = SubResource("AtlasTexture_7qb0m")

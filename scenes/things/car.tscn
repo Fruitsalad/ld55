@@ -1,0 +1,38 @@
+[gd_scene load_steps=9 format=3 uid="uid://ddqqvq4uo1531"]
+
+[ext_resource type="Texture2D" uid="uid://dpboqdtbpygnl" path="res://assets/png/sprites.png" id="1_jgseh"]
+[ext_resource type="Script" path="res://source/game/things/Car.cs" id="2_n0qkl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cegja"]
+atlas = ExtResource("1_jgseh")
+region = Rect2(0, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmx8b"]
+atlas = ExtResource("1_jgseh")
+region = Rect2(64, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv0xx"]
+atlas = ExtResource("1_jgseh")
+region = Rect2(0, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnsog"]
+atlas = ExtResource("1_jgseh")
+region = Rect2(0, 448, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itulf"]
+atlas = ExtResource("1_jgseh")
+region = Rect2(64, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uynox"]
+atlas = ExtResource("1_jgseh")
+region = Rect2(64, 448, 64, 64)
+
+[node name="Car" type="Sprite2D"]
+texture = SubResource("AtlasTexture_cegja")
+script = ExtResource("2_n0qkl")
+tex_normal = SubResource("AtlasTexture_cegja")
+tex_trunk_open = SubResource("AtlasTexture_jmx8b")
+tex_bottom = SubResource("AtlasTexture_hv0xx")
+tex_top = SubResource("AtlasTexture_hnsog")
+tex_upside_down = SubResource("AtlasTexture_itulf")
+tex_upside_down_trunk_open = SubResource("AtlasTexture_uynox")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://bn82wglhl4r2q"]
+
+[ext_resource type="Texture2D" uid="uid://dpboqdtbpygnl" path="res://assets/png/sprites.png" id="1_f6a3s"]
+[ext_resource type="Script" path="res://source/game/things/Tome.cs" id="2_5ymrt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cegja"]
+atlas = ExtResource("1_f6a3s")
+region = Rect2(448, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vuyjo"]
+atlas = ExtResource("1_f6a3s")
+region = Rect2(512, 256, 64, 64)
+
+[node name="Tome" type="Sprite2D"]
+texture = SubResource("AtlasTexture_cegja")
+script = ExtResource("2_5ymrt")
+tex_normal = SubResource("AtlasTexture_cegja")
+tex_open = SubResource("AtlasTexture_vuyjo")

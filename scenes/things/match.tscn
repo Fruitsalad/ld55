@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://dckwojnpieuct"]
+
+[ext_resource type="Texture2D" uid="uid://dpboqdtbpygnl" path="res://assets/png/sprites.png" id="1_duy3h"]
+[ext_resource type="Script" path="res://source/game/things/Match.cs" id="2_me67x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5nio"]
+atlas = ExtResource("1_duy3h")
+region = Rect2(192, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ignq1"]
+atlas = ExtResource("1_duy3h")
+region = Rect2(192, 384, 64, 64)
+
+[node name="Match" type="Sprite2D"]
+texture = SubResource("AtlasTexture_u5nio")
+script = ExtResource("2_me67x")
+unlit = SubResource("AtlasTexture_u5nio")
+lit = SubResource("AtlasTexture_ignq1")

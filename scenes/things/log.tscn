@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://bx3kcd8gcgqka"]
+
+[ext_resource type="Texture2D" uid="uid://dpboqdtbpygnl" path="res://assets/png/sprites.png" id="1_amn62"]
+[ext_resource type="Script" path="res://source/game/things/Log.cs" id="2_bs3ao"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cegja"]
+atlas = ExtResource("1_amn62")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsjtr"]
+atlas = ExtResource("1_amn62")
+region = Rect2(0, 64, 64, 64)
+
+[node name="Log" type="Sprite2D"]
+texture = SubResource("AtlasTexture_cegja")
+script = ExtResource("2_bs3ao")
+branchless = SubResource("AtlasTexture_bsjtr")

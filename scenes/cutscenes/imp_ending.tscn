@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://4huwoxwsg5ir"]
+
+[ext_resource type="Theme" uid="uid://d0dyrkwv46hvp" path="res://assets/ui/theme.tres" id="1_0dchi"]
+[ext_resource type="Script" path="res://source/game/cutscene/ImpEnding.cs" id="2_le4cy"]
+[ext_resource type="RichTextEffect" uid="uid://dke8ot6npr3j3" path="res://assets/text_effects/type.tres" id="3_wk2py"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8lcl"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[node name="ImpEnding" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_0dchi")
+script = ExtResource("2_le4cy")
+
+[node name="TextBoxPanel" type="Panel" parent="."]
+unique_name_in_owner = true
+visible = false
+z_index = 100
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_t8lcl")
+
+[node name="Margin" type="MarginContainer" parent="TextBoxPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="TextBox" type="RichTextLabel" parent="TextBoxPanel/Margin"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "Text text text
+More text"
+fit_content = true
+shortcut_keys_enabled = false
+custom_effects = [ExtResource("3_wk2py")]

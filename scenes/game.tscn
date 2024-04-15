@@ -1,0 +1,417 @@
+[gd_scene load_steps=31 format=3 uid="uid://b4vd43l1y7ivu"]
+
+[ext_resource type="Theme" uid="uid://d0dyrkwv46hvp" path="res://assets/ui/theme.tres" id="1_tld4l"]
+[ext_resource type="Script" path="res://source/game/Game.cs" id="2_nn5u8"]
+[ext_resource type="PackedScene" uid="uid://qcab4kke6h6y" path="res://scenes/things/birch.tscn" id="3_6lwyy"]
+[ext_resource type="Script" path="res://source/game/Trails.cs" id="3_ab1xp"]
+[ext_resource type="Texture2D" uid="uid://dpboqdtbpygnl" path="res://assets/png/sprites.png" id="4_iuyeo"]
+[ext_resource type="Script" path="res://source/game/things/Player.cs" id="5_nrkst"]
+[ext_resource type="PackedScene" uid="uid://ddqqvq4uo1531" path="res://scenes/things/car.tscn" id="6_8i3g5"]
+[ext_resource type="PackedScene" uid="uid://cv4yu6fnhul7l" path="res://scenes/things/car_key.tscn" id="8_8owkn"]
+[ext_resource type="RichTextEffect" uid="uid://dke8ot6npr3j3" path="res://assets/text_effects/type.tres" id="8_k0fag"]
+[ext_resource type="PackedScene" uid="uid://swutu74o63pn" path="res://scenes/things/deer.tscn" id="10_rn6se"]
+[ext_resource type="FontFile" uid="uid://c7le2s707buwa" path="res://assets/fonts/Tape Basic 14h.ttf" id="11_dv6vg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86j8f"]
+atlas = ExtResource("4_iuyeo")
+region = Rect2(576, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2yjl"]
+atlas = ExtResource("4_iuyeo")
+region = Rect2(640, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0842y"]
+atlas = ExtResource("4_iuyeo")
+region = Rect2(448, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0f52"]
+atlas = ExtResource("4_iuyeo")
+region = Rect2(512, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6iy1v"]
+atlas = ExtResource("4_iuyeo")
+region = Rect2(704, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oiqj1"]
+atlas = ExtResource("4_iuyeo")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wx1rg"]
+atlas = ExtResource("4_iuyeo")
+region = Rect2(512, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a61al"]
+atlas = ExtResource("4_iuyeo")
+region = Rect2(576, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1nev"]
+atlas = ExtResource("4_iuyeo")
+region = Rect2(256, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_405ny"]
+atlas = ExtResource("4_iuyeo")
+region = Rect2(384, 0, 192, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4avi7"]
+atlas = ExtResource("4_iuyeo")
+region = Rect2(448, 64, 64, 64)
+
+[sub_resource type="Animation" id="Animation_70kfp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%FadeAway:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%FadeAway:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/AnimationCar:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(448, 192)]
+}
+
+[sub_resource type="Animation" id="Animation_q4pfm"]
+resource_name = "Start"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%FadeAway:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%FadeAway:self_modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/AnimationCar:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(448, 192), Vector2(415, 189), Vector2(387, 192), Vector2(365, 189), Vector2(336, 192), Vector2(320, 192)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mj513"]
+_data = {
+"RESET": SubResource("Animation_70kfp"),
+"Start": SubResource("Animation_q4pfm")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cegja"]
+atlas = ExtResource("4_iuyeo")
+region = Rect2(0, 320, 64, 64)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mlcml"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47n1x"]
+atlas = ExtResource("4_iuyeo")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_43ldo"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_w466i"]
+font = ExtResource("11_dv6vg")
+font_color = Color(0, 0, 0, 1)
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_tld4l")
+script = ExtResource("2_nn5u8")
+
+[node name="FadeAway" type="ColorRect" parent="."]
+unique_name_in_owner = true
+z_index = 1000
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="World" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Trails" type="Node2D" parent="World"]
+unique_name_in_owner = true
+z_index = -10
+script = ExtResource("3_ab1xp")
+tex_end = SubResource("AtlasTexture_86j8f")
+tex_straight = SubResource("AtlasTexture_a2yjl")
+tex_corner = SubResource("AtlasTexture_0842y")
+tex_split = SubResource("AtlasTexture_k0f52")
+tex_crossing = SubResource("AtlasTexture_6iy1v")
+
+[node name="Things" type="Node2D" parent="World"]
+unique_name_in_owner = true
+
+[node name="Birch" parent="World/Things" instance=ExtResource("3_6lwyy")]
+position = Vector2(256, 384)
+
+[node name="Birch2" parent="World/Things" instance=ExtResource("3_6lwyy")]
+position = Vector2(128, 64)
+
+[node name="Birch3" parent="World/Things" instance=ExtResource("3_6lwyy")]
+position = Vector2(64, 192)
+
+[node name="Birch4" parent="World/Things" instance=ExtResource("3_6lwyy")]
+position = Vector2(512, 256)
+
+[node name="Birch5" parent="World/Things" instance=ExtResource("3_6lwyy")]
+position = Vector2(576, 64)
+
+[node name="Birch6" parent="World/Things" instance=ExtResource("3_6lwyy")]
+position = Vector2(640, 320)
+
+[node name="Birch7" parent="World/Things" instance=ExtResource("3_6lwyy")]
+position = Vector2(768, 128)
+
+[node name="Player" type="Sprite2D" parent="World/Things"]
+visible = false
+position = Vector2(320, 256)
+texture = SubResource("AtlasTexture_oiqj1")
+script = ExtResource("5_nrkst")
+normal = SubResource("AtlasTexture_oiqj1")
+tex_dead = SubResource("AtlasTexture_wx1rg")
+tex_dead_stab = SubResource("AtlasTexture_a61al")
+
+[node name="Hat" type="Sprite2D" parent="World/Things/Player"]
+z_index = 1
+position = Vector2(0, -46)
+texture = SubResource("AtlasTexture_m1nev")
+
+[node name="Ellipsis" type="Sprite2D" parent="World/Things/Player"]
+unique_name_in_owner = true
+visible = false
+z_index = 2
+position = Vector2(0, -29)
+texture = SubResource("AtlasTexture_405ny")
+hframes = 3
+
+[node name="StabWound" type="Sprite2D" parent="World/Things/Player"]
+visible = false
+texture = SubResource("AtlasTexture_4avi7")
+
+[node name="Car" parent="World/Things" instance=ExtResource("6_8i3g5")]
+unique_name_in_owner = true
+visible = false
+z_index = -1
+position = Vector2(320, 192)
+
+[node name="CarKey" parent="World/Things" instance=ExtResource("8_8owkn")]
+unique_name_in_owner = true
+visible = false
+position = Vector2(256, 256)
+
+[node name="Deer" parent="World/Things" instance=ExtResource("10_rn6se")]
+position = Vector2(768, 384)
+
+[node name="Effects" type="Node2D" parent="World"]
+unique_name_in_owner = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="World"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_mj513")
+}
+
+[node name="AnimationCar" type="Sprite2D" parent="World/AnimationPlayer"]
+unique_name_in_owner = true
+position = Vector2(448, 192)
+texture = SubResource("AtlasTexture_cegja")
+
+[node name="TextBoxPanel" type="Panel" parent="."]
+unique_name_in_owner = true
+visible = false
+z_index = 100
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mlcml")
+
+[node name="Margin" type="MarginContainer" parent="TextBoxPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 8
+
+[node name="TextBox" type="RichTextLabel" parent="TextBoxPanel/Margin"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "Text text text
+More text"
+fit_content = true
+shortcut_keys_enabled = false
+custom_effects = [ExtResource("8_k0fag")]
+
+[node name="MoreArrow" type="TextureRect" parent="TextBoxPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = SubResource("AtlasTexture_47n1x")
+
+[node name="PauseMenu" type="Panel" parent="."]
+unique_name_in_owner = true
+z_index = 2000
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 384.0
+offset_top = 128.0
+offset_right = -320.0
+offset_bottom = -156.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_43ldo")
+
+[node name="ContinueButton" type="Button" parent="PauseMenu"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -128.0
+offset_right = 24.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+text = "Continue"
+alignment = 0
+
+[node name="RestartButton" type="Button" parent="PauseMenu"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -92.0
+offset_right = 24.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+text = "Restart"
+alignment = 0
+
+[node name="Label" type="Label" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 104.0
+offset_bottom = 84.0
+text = "Paused"
+label_settings = SubResource("LabelSettings_w466i")

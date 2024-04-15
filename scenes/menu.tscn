@@ -1,0 +1,447 @@
+[gd_scene load_steps=18 format=3 uid="uid://tdrm4fkwja5e"]
+
+[ext_resource type="Texture2D" uid="uid://dpboqdtbpygnl" path="res://assets/png/sprites.png" id="1_b87yx"]
+[ext_resource type="Theme" uid="uid://d0dyrkwv46hvp" path="res://assets/ui/theme.tres" id="1_uc2s3"]
+[ext_resource type="Script" path="res://source/game/MainMenu.cs" id="2_yexu1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8kcx"]
+atlas = ExtResource("1_b87yx")
+region = Rect2(128, 448, 320, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5td1"]
+atlas = ExtResource("1_b87yx")
+region = Rect2(128, 576, 320, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6thr8"]
+atlas = ExtResource("1_b87yx")
+region = Rect2(0, 576, 128, 128)
+
+[sub_resource type="Animation" id="Animation_2al5t"]
+resource_name = "Floaty"
+length = 24.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sokoban:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(4, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sokoban:rotation")
+tracks/1/interp = 4
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0170022, -0.0645804]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Summon:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4.2, 16.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(56, 78), Vector2(52, 78)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Summon:rotation")
+tracks/3/interp = 4
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4.2, 16.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0129976, -0.0778725]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("X:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(8, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(254, 74), Vector2(254, 74)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("X:rotation")
+tracks/5/interp = 4
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(8, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0599659, -0.123729]
+}
+
+[sub_resource type="Animation" id="Animation_gmc07"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sokoban:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sokoban:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0962674]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Summon:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(56, 78)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Summon:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.02998]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("X:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(254, 74)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("X:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0599659]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0evn8"]
+_data = {
+"Floaty": SubResource("Animation_2al5t"),
+"RESET": SubResource("Animation_gmc07")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5nio"]
+atlas = ExtResource("1_b87yx")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="Animation" id="Animation_c7768"]
+resource_name = "BackgroundScroll"
+length = 21.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("World/Environment/BG1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10, 11),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(960, 0), Vector2(-960, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("World/Environment/BG2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 10, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-960, 0), Vector2(0, 0), Vector2(960, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("World/Environment/BG1:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 10, 11),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_8ep7y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("World/Environment/BG1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("World/Environment/BG2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("World/Environment/BG1:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jrvaa"]
+_data = {
+"BackgroundScroll": SubResource("Animation_c7768"),
+"RESET": SubResource("Animation_8ep7y")
+}
+
+[sub_resource type="Animation" id="Animation_3f1h7"]
+resource_name = "DriveLoop"
+length = 0.5
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("World/CarAnimation/Car:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.35, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(448, 320), Vector2(444, 319), Vector2(449, 319), Vector2(448, 320)]
+}
+
+[sub_resource type="Animation" id="Animation_omfvn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("World/CarAnimation/Car:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(448, 320)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fegqp"]
+_data = {
+"DriveLoop": SubResource("Animation_3f1h7"),
+"RESET": SubResource("Animation_omfvn")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cegja"]
+atlas = ExtResource("1_b87yx")
+region = Rect2(0, 320, 64, 64)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_uc2s3")
+script = ExtResource("2_yexu1")
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Title" type="Node2D" parent="World"]
+position = Vector2(396, 61)
+
+[node name="Sokoban" type="Sprite2D" parent="World/Title"]
+rotation = 0.0962674
+texture = SubResource("AtlasTexture_q8kcx")
+
+[node name="Summon" type="Sprite2D" parent="World/Title"]
+position = Vector2(56, 78)
+rotation = 0.02998
+texture = SubResource("AtlasTexture_h5td1")
+
+[node name="X" type="Sprite2D" parent="World/Title"]
+position = Vector2(254, 74)
+rotation = 0.0599659
+texture = SubResource("AtlasTexture_6thr8")
+
+[node name="TitleAnimation" type="AnimationPlayer" parent="World/Title"]
+libraries = {
+"": SubResource("AnimationLibrary_0evn8")
+}
+autoplay = "Floaty"
+
+[node name="Environment" type="Node2D" parent="World"]
+
+[node name="BG1" type="Node2D" parent="World/Environment"]
+
+[node name="Birch" type="Sprite2D" parent="World/Environment/BG1"]
+position = Vector2(128, 384)
+texture = SubResource("AtlasTexture_u5nio")
+
+[node name="Birch2" type="Sprite2D" parent="World/Environment/BG1"]
+position = Vector2(256, 256)
+texture = SubResource("AtlasTexture_u5nio")
+
+[node name="Birch3" type="Sprite2D" parent="World/Environment/BG1"]
+position = Vector2(576, 448)
+texture = SubResource("AtlasTexture_u5nio")
+
+[node name="Birch4" type="Sprite2D" parent="World/Environment/BG1"]
+position = Vector2(768, 192)
+texture = SubResource("AtlasTexture_u5nio")
+
+[node name="Birch5" type="Sprite2D" parent="World/Environment/BG1"]
+position = Vector2(320, 512)
+texture = SubResource("AtlasTexture_u5nio")
+
+[node name="Birch6" type="Sprite2D" parent="World/Environment/BG1"]
+position = Vector2(896, 512)
+texture = SubResource("AtlasTexture_u5nio")
+
+[node name="BG2" type="Node2D" parent="World/Environment"]
+
+[node name="Birch7" type="Sprite2D" parent="World/Environment/BG2"]
+position = Vector2(300, 448)
+texture = SubResource("AtlasTexture_u5nio")
+
+[node name="Birch8" type="Sprite2D" parent="World/Environment/BG2"]
+position = Vector2(172, 256)
+texture = SubResource("AtlasTexture_u5nio")
+
+[node name="Birch9" type="Sprite2D" parent="World/Environment/BG2"]
+position = Vector2(556, 448)
+texture = SubResource("AtlasTexture_u5nio")
+
+[node name="Birch10" type="Sprite2D" parent="World/Environment/BG2"]
+position = Vector2(812, 256)
+texture = SubResource("AtlasTexture_u5nio")
+
+[node name="EnvAnimation" type="AnimationPlayer" parent="World/Environment"]
+root_node = NodePath("../../..")
+libraries = {
+"": SubResource("AnimationLibrary_jrvaa")
+}
+autoplay = "BackgroundScroll"
+
+[node name="CarAnimation" type="AnimationPlayer" parent="World"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_fegqp")
+}
+autoplay = "DriveLoop"
+
+[node name="Car" type="Sprite2D" parent="World/CarAnimation"]
+position = Vector2(448, 320)
+texture = SubResource("AtlasTexture_cegja")
+
+[node name="StartButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -31.5
+offset_top = -58.0
+offset_right = 31.5
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+text = "Start"
+flat = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 229.0
+offset_top = 183.0
+offset_right = 757.0
+offset_bottom = 203.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "A small game made in two days for Ludum Dare 55"

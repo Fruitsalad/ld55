@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://hpvx3qr2v8sn"]
+
+[ext_resource type="Texture2D" uid="uid://dpboqdtbpygnl" path="res://assets/png/sprites.png" id="1_4d4s7"]
+[ext_resource type="Script" path="res://source/game/things/Crackers.cs" id="2_k2pub"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5nio"]
+atlas = ExtResource("1_4d4s7")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2cyv"]
+atlas = ExtResource("1_4d4s7")
+region = Rect2(320, 256, 64, 64)
+
+[node name="Crackers" type="Sprite2D"]
+texture = SubResource("AtlasTexture_u5nio")
+script = ExtResource("2_k2pub")
+tex_torn = SubResource("AtlasTexture_r2cyv")

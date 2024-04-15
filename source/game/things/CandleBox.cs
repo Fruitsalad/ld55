@@ -10,10 +10,11 @@ public partial class CandleBox : Thing {
     public override void _stare(StareEvent e) => stare.handle(e, () => {
         stare.add("It's a box of candles.");
         int i = 0;
-        while (are_surrounding_tiles_free(i + 1)) {
-            var another = (i == 0 ? "a" : "another");
-            stare.add($"You start taking {another} candle out...",
+        if (are_surrounding_tiles_free(1))
+            stare.add("You start taking a candle out...",
                 ponder: true, time: 0);
+        
+        while (are_surrounding_tiles_free(i + 1)) {
             stare.add(action: unpack, rummage: true);
             i += 1;
         }
@@ -21,7 +22,7 @@ public partial class CandleBox : Thing {
 
     void unpack(StareEvent e) {
         toss_nearby(candle);
-        game.tell("You take a candle out of the box.");
+        game.tell("You take a candle out of the box.", allow_pondering: true);
     }
     
     public override void _push(PushEvent e, Thing by, Thing into) {

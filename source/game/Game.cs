@@ -12,7 +12,7 @@ public partial class Game : Control {
     
 	public const int tile_width = 64;
 	public const float smack_delay = 0.1f;
-	public const float default_ponder_time = 3f;
+	public const float default_ponder_time = 2f;
 	public static Vector2I tile_size = new(tile_width, tile_width);
 	public static Vector2I half_tile = tile_size / 2;
 	
@@ -516,7 +516,7 @@ public partial class Game : Control {
 	void _show_message(Message message) {
 		is_showing_message = true;
 		var letters = message.text.Length;
-		var duration = 0.5f + 0.1f * letters;
+		var duration = 1 + 0.05f * letters;
 		// If the old message is the same as the new message, it breaks the
 		// typing effect, so we clear the text first.
 		text_box.Text = "";

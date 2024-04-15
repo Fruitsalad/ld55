@@ -12,25 +12,25 @@ public partial class ImpEnding : Cutscene {
         tween.TweenCallback(Callable.From(() => {
             tell("An imp appears in your view...");
         }));
-        tween.TweenInterval(6);
+        tween.TweenInterval(7);
         tween.TweenCallback(Callable.From(() => {
             tell("He immediately starts eating all your soda and crackers.");
         }));
-        tween.TweenInterval(10);
+        tween.TweenInterval(7);
         tween.TweenCallback(Callable.From(() => {
             tell("After he's done, you manage to take him home with you.");
         }));
-        tween.TweenInterval(12);
+        tween.TweenInterval(7);
         tween.TweenCallback(Callable.From(() => {
             tell("He's not sexy and he doesn't turn out to be very smart,"
                 + " but he occasionally does the dishes and sometimes"
                 + " helps clean.");
         }));
-        tween.TweenInterval(12);
+        tween.TweenInterval(9);
         tween.TweenCallback(Callable.From(() => {
             tell("Looks like you got yourself an occult servant! Neat!");
         }));
-        tween.TweenInterval(12);
+        tween.TweenInterval(6);
         tween.TweenCallback(Callable.From(() => {
             tell("GAME OVER: You summoned an imp! (Not a succubus)");
         }));

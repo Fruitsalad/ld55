@@ -97,28 +97,28 @@ public partial class Car : Thing {
             bool has_more_left = supplies_remaining > 7;
             for (int i = Math.Min(7, supplies_remaining); i > 0; i -= 1)
                 stare.add(action: handle_grabbing_supplies, rummage: true,
-                    time: 4);
+                    time: 3);
             if (has_more_left)
                 stare.add("There's more left in the trunk, but you have nowhere"
-                    + " to put it.", time: 5f);
-            else stare.add("The trunk is empty.", time: 5f);
+                    + " to put it.", time: 3);
+            else stare.add("The trunk is empty.", time: 3);
             return;
         }
         
         stare.add("It's your car. Your trusty Toyota Aygo.");
         if (Math.Abs(rotation) == 1)
-            stare.add("You've pushed it on its side.");
+            stare.add("You've pushed it on its side.", time: 0);
         if (Math.Abs(rotation) > 1) {
-            stare.add("It's upside-down.");
+            stare.add("It's upside-down.", time: 0);
             stare.add("It's more of a Toyota Aydontgo at this point.", time: 0);
         }
         if (!is_trunk_unlocked) {
             stare.add(
                 "You have a bunch of supplies in the trunk, "
-                + "but the trunk is locked."
+                + "but the trunk is locked.", time: 0
             );
         } else if (supplies_remaining != 0)
-            stare.add("There are still supplies in the trunk.");
+            stare.add("There are still supplies in the trunk.", time: 0);
     });
 
     void handle_grabbing_supplies(StareEvent e) {
